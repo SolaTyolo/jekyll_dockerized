@@ -2,7 +2,8 @@ version: '2'
 
 services:
   jekyll:
-    build: .
+    #build: .
+    image: registry.cn-hangzhou.aliyuncs.com/solat/blog_jekyll:1.0
     volumes:
       - .:/site
     ports:

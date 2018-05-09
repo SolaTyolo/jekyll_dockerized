@@ -12,7 +12,7 @@ WORKDIR /site
 ENV JEKYLL_NEW false
 
 COPY docker-entrypoint.sh /usr/local/bin/
-
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 # on every container start we'l'
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 

@@ -6,7 +6,9 @@ RUN gem install jekyll
 
 EXPOSE 4000
 
-WORKDIR /site
+ARG WORKDIR=/usr/local/blog
+RUN mkdir -p ${WORKDIR}}
+WORKDIR ${WORKDIR}}
 
 # create new site by setting -e JEKYLL_NEW=true
 ENV JEKYLL_NEW false

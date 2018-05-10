@@ -3,10 +3,8 @@ version: '2'
 services:
   jekyll:
     #build: .
-    #image: registry.cn-hangzhou.aliyuncs.com/solat/blog_jekyll:1.0 
-    image: solat/blog_jekyll
+    image: registry.cn-hangzhou.aliyuncs.com/solat/blog_jekyll
     volumes:
-      - .:/site
+      - .:/usr/local/blog
     ports:
       - '80:4000'
-    tty: true

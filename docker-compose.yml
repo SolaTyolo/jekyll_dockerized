@@ -5,5 +5,23 @@ services:
     image: registry.cn-hangzhou.aliyuncs.com/solat/blog_jekyll
     volumes:
       - .:/usr/local/blog
+    environment:
+      - JEKYLL_NEW=False
     ports:
-      - '80:4000'
+      - '8080:4000'
+  
+  jekyll-init:
+    jekyll:
+    image: registry.cn-hangzhou.aliyuncs.com/solat/blog_jekyll
+    volumes:
+      - .:/usr/local/blog
+    environment:
+      - JEKYLL_NEW=True
+    ports:
+      - '8080:4000'
+  
+  jekyll-build:
+    build:
+      context: .
+      args:
+          - GWF=True

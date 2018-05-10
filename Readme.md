@@ -11,8 +11,8 @@
 #### Usage
 
 - git clone https://github.com/SolaTyolo/jekyll_dockerized.git
--  (首次请先执行`init.sh`)，只需执行一次
-- 之后就可直接执行`docker-compose up -d`
+- 首次运行请执行 `docker-compose up -d jekyll-init`
+- 之后都执行`docker-compose up -d jekyll`
 - 进入容器:
     > `docker-compose exec jekyll bash`
     > 
@@ -21,9 +21,8 @@
 
 #### SelfBuild
 
-- 若是您想自行构建镜像，可执行`build.sh`会生成blog_jekyll的镜像，但是构建时间比较久，请您耐心等待:blush:
-- 之后将`docker-compose.yml`和`init.sh`中的镜像替换成刚才生成镜像的名字即可
-
+- 若是您想自行构建镜像，可执行`docker-compose up -d jekyll-build`会根据当前的Dockfile生成镜像:blush:
+- 之后将`docker-compose.yml`中的镜像名替换成刚才生成镜像的名字即可，后重复Usage的步骤
 
 #### Extra
 

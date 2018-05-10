@@ -6,7 +6,7 @@ set -e
 
 if [ "$JEKYLL_NEW" = true ]; then
   echo "NOTE: making new jekyll site!"
-  jekyll new .
+  jekyll new . --force
 fi
 
 if [ ! -f Gemfile ]; then

@@ -6,17 +6,16 @@ services:
     volumes:
       - .:/usr/local/blog
     environment:
-      - JEKYLL_NEW=False
+      - JEKYLL_NEW=false
     ports:
       - '8080:4000'
   
-  jekyll-init:
-    jekyll:
+  jekyll-new:
     image: registry.cn-hangzhou.aliyuncs.com/solat/blog_jekyll
     volumes:
       - .:/usr/local/blog
     environment:
-      - JEKYLL_NEW=True
+      - JEKYLL_NEW=true
     ports:
       - '8080:4000'
   

@@ -2,18 +2,18 @@ FROM daocloud.io/library/ruby:2.2.7-alpine
 
 # apk替换为国内源
 ARG GWF=True
-RUN if [ ${GWF} = True ]; then \
-    cp /etc/apk/repositories /etc/apk/repositories.bak \
-    && echo "http://mirrors.aliyun.com/alpine/v3.4/main/" > /etc/apk/repositories \
-;if
+#RUN if [ ${GWF} = True ]; then \
+RUN cp /etc/apk/repositories /etc/apk/repositories.bak
+RUN echo "http://mirrors.aliyun.com/alpine/v3.4/main/" > /etc/apk/repositories
+#;if
 
 RUN apk add --no-cache build-base gcc bash cmake
 
 # gem 替换为国内源
-RUN if [ ${GWF} = True ]; then \
-    gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/ \
-    && gem sources -u  \
- ;if
+#RUN if [ ${GWF} = True ]; then \
+RUN gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/ 
+RUN gem sources -u
+# ;if
 
 RUN gem install jekyll
 

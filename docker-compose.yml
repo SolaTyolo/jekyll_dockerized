@@ -4,7 +4,7 @@ services:
   jekyll:
     image: registry.cn-hangzhou.aliyuncs.com/solat/blog_jekyll
     volumes:
-      - .:/usr/local/blog
+      - ${BLOG_APP}:/usr/local/blog
     environment:
       - JEKYLL_NEW=false
     ports:
@@ -13,7 +13,7 @@ services:
   jekyll-new:
     image: registry.cn-hangzhou.aliyuncs.com/solat/blog_jekyll
     volumes:
-      - .:/usr/local/blog
+      - ${BLOG_APP}:/usr/local/blog
     environment:
       - JEKYLL_NEW=true
     ports:

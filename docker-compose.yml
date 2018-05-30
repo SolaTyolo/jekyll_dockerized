@@ -8,7 +8,7 @@ services:
     environment:
       - JEKYLL_NEW=false
     ports:
-      - '8080:4000'
+      - '${PORT}:4000'
   
   jekyll-new:
     image: registry.cn-hangzhou.aliyuncs.com/solat/blog_jekyll
@@ -17,7 +17,7 @@ services:
     environment:
       - JEKYLL_NEW=true
     ports:
-      - '8080:4000'
+      - '${PORT}:4000'
   
   jekyll-build:
     build:
